@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css" />
+    <script
+      type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnRFrcygm3gRwg_Wl25bVD2D3J3eyXsJE"
+    ></script>
+    <script src="js/parkIt.js"></script>
+    <script src="cordova.js"></script>
+  </head>
+  <body onLoad="init()">
+    <div id="navbar">
+      <button id="park" onClick="setParkingLocation()">Park</button>
+      Park It
+      <button id="retrieve" onClick="getParkingLocation()">Find</button>
+    </div>
+    <div id="container">
+      <div id="instructions">
+        <p>Click the Park button to set the Parking Location</p>
+        <p>Click the Find button to retrieve the Parking Location</p>
+        <p style="text-align: center">
+          <button id="gotIt" onClick="setCss('instructions','display','none')">
+            Got It
+          </button>
+        </p>
+      </div>
+      <div id="map"></div>
+      <div id="directions"></div>
+    </div>
+  </body>
+</html>
