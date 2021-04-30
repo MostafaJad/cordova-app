@@ -7,7 +7,49 @@ var storage;
 
 function init() {
   document.addEventListener("deviceready", onDeviceReady, false);
+  document
+    .getElementById("cameraTakePicture")
+    .addEventListener("click", cameraTakePicture);
+  document
+    .getElementById("cameraGetPicture")
+    .addEventListener("click", cameraGetPicture);
   storage = window.localStorage;
+}
+
+function cameraTakePicture() {
+  navigator.camera.getPicture(onSuccess, onFail, {
+    quality: 50,
+    destinationType: Camera.DestinationType.DATA_URL,
+  });
+
+  function onSuccess(imageData) {
+    var image = document.getElementById("myImage");
+    image.src = "data:image/jpeg;base64," + imageData;
+  }
+
+  function onFail(message) {
+    alert("Failed because: " + message);
+  }
+}
+function cameraGetPicture() {
+  navigator.camera.getPicture(onSuccess, onFail, {
+    quality: 50,
+    destinationType: Camera.DestinationType.DATA_URL,
+    sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM,
+    targetWidth: 50,
+    targetHeight: 50,
+  });
+
+  function onSuccess(imageData) {
+    var image = document.getElementById("myImage");
+    image.style.display = "block";
+
+    image.src = "data:image/jpeg;base64," + imageData;
+  }
+
+  function onFail(message) {
+    alert("Failed because: " + message);
+  }
 }
 
 function onDeviceReady() {
