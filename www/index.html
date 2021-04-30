@@ -1,35 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css" />
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css" />
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
+
     <link rel="stylesheet" href="css/index.css" />
-    <script
-      type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnRFrcygm3gRwg_Wl25bVD2D3J3eyXsJE"
-    ></script>
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnRFrcygm3gRwg_Wl25bVD2D3J3eyXsJE"></script>
     <script src="js/parkIt.js"></script>
     <script src="cordova.js"></script>
-  </head>
-  <body onLoad="init()">
-    <div id="navbar">
-      <button id="park" onClick="setParkingLocation()">Park</button>
-      Park It
-      <button id="retrieve" onClick="getParkingLocation()">Find</button>
-    </div>
-    <div id="container">
-      <div id="instructions">
-        <p>Click the Park button to set the Parking Location</p>
-        <p>Click the Find button to retrieve the Parking Location</p>
-        <p style="text-align: center">
-          <button id="gotIt" onClick="setCss('instructions','display','none')">
-            Got It
-          </button>
-        </p>
-      </div>
-      <div id="map"></div>
-      <div id="directions"></div>
-    </div>
-  </body>
+</head>
+
+<body onLoad="init()">
+    <ons-page>
+        <ons-toolbar>
+            <div class="center">Find Your Car</div>
+        </ons-toolbar>
+
+        <ons-tabbar swipeable position="auto">
+            <ons-tab page="tab1.html" label="Park it" icon="fa-parking" active id="park" size="20px">
+            </ons-tab>
+            <ons-tab page="tab2.html" label="Find it" icon="fa-car" active-icon="fa-location-arrow" id="retrieve">
+            </ons-tab>
+        </ons-tabbar>
+    </ons-page>
+
+    <template id="tab1.html">
+        <ons-page id="Tab2">
+            <ons-card>
+                <div class="title" style="text-align: center">
+                    Welcome At Find MyCar
+                </div>
+                <img src="https://www.fairlawnchurch.ca/wp-content/uploads/2015/08/parking-logo.png" alt="Parking Logo"
+                    style="width: 100%" />
+                <ons-button modifier="large" onClick="setParkingLocation()" id="gotIt">
+                    Park It
+                </ons-button>
+            </ons-card>
+            <div id="instructions">
+                <p>Click the Park button to set the Parking Location</p>
+                <p>Click the Find button to retrieve the Parking Location</p>
+                <p style="text-align: center">
+                    <ons-button id="gotIt" onClick="setCss('instructions','display','none')">Got it</ons-button>
+                </p>
+            </div>
+        </ons-page>
+    </template>
+    <template id="tab2.html">
+        <ons-page id="Tab1">
+            <div id="container">
+                <div id="instructions">
+                    <p style="text-align: center">
+
+                    <ons-button modifier="large" id="retrieve" onClick="getParkingLocation() , setCss('instructions','display','none') ">Got it</ons-button>
+                    </p>
+                </div>
+                <div id="map"></div>
+                <!-- <div id="directions"></div> -->
+                <ons-list-header id="directions">Directions</ons-list-header>
+
+                </ons-list>
+                <ons-speed-dial position="bottom right" direction="up">
+                    <ons-fab>
+                      <ons-icon icon="md-share"></ons-icon>
+                    </ons-fab>
+                    <ons-speed-dial-item>
+                      <ons-icon icon="md-twitter"></ons-icon>
+                    </ons-speed-dial-item>
+                    <ons-speed-dial-item>
+                        <ons-icon icon="md-facebook"></ons-icon>
+                      </ons-speed-dial-item>
+        </ons-page>
+    </template>
+</body>
+
 </html>

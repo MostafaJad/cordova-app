@@ -28,6 +28,11 @@ function setCss(elm, prop, val) {
   var node = document.getElementById(elm).style;
   node.setProperty(prop, val);
 }
+document.addEventListener("prechange", function (event) {
+  document.querySelector(
+    "ons-toolbar .center"
+  ).innerHTML = event.tabItem.getAttribute("label");
+});
 
 function setParkingLocation() {
   navigator.geolocation.getCurrentPosition(

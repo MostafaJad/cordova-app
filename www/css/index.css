@@ -15,7 +15,7 @@ body {
   float: left;
 }
 #retrieve {
-  float: right;
+  justify-content: center;
 }
 button {
   padding: 5px 10px;
