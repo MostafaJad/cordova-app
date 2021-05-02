@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "313841233287",
+    "project_id": "parkit-312105",
+    "storage_bucket": "parkit-312105.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313841233287:android:775744a029b68c55863722",
+        "android_client_info": {
+          "package_name": "park.it"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "313841233287-930182u1g40srvl04el8c98m1ngeg82j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUuLNBUY3t5VzOdXOuMgHdAjSfpX9a4_Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "313841233287-930182u1g40srvl04el8c98m1ngeg82j.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "313841233287-vh653ngr0btakd6bplbraii4nlhn75rt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "parkit"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

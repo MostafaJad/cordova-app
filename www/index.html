@@ -5,19 +5,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css" />
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
     <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
     <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
-
-    <link rel="stylesheet" href="css/index.css" />
     <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnRFrcygm3gRwg_Wl25bVD2D3J3eyXsJE"></script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-     <script src="js/parkIt.js"></script>
-    <script src="cordova.js"></script>
+    <script src="js/location.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-storage.js"></script>
+    <script src="./js/firebaseinit.js"></script>
+    <script src="./js/fireBase.js"></script>
+    <script src="./js/camera.js"></script>
 </head>
 
 <body onLoad="init()">
@@ -57,6 +59,7 @@
             </div>
         </ons-page>
     </template>
+
     <template id="tab2.html">
         <ons-page id="Tab1">
             <div id="container">
@@ -97,12 +100,18 @@
                     <img style=" display: block;
                     margin-left: auto;
                     margin-right: auto;
-                    width: 50%;" id="myImage"></img>
+                    width: 60%;" id="myImage"></img>
+                                        <p style="text-align: center">
+                           <ons-button id="saveToStorage" onClick="window.location.reload();">Save to FireBase</ons-button>
+        </p>
                 </div>
 
             </ons-card>
         </ons-page>
     </template>
 </body>
+
+<script src="js/parkIt.js"></script>
+<script src="cordova.js"></script>
 
 </html>
